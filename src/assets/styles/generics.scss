@@ -1,0 +1,41 @@
+/************************** COLORS **************************/
+$black: #1D2A3B;
+$green: #20CF9E;
+$grey-light: #F6F2EB;
+$grey-medium: #BDBBB8;
+$white: #FFFFFF;
+
+/************************** FONT-FAMILY **************************/
+$font-light: "Roboto-Light";
+$font-regular: "Roboto-Regular";
+$font-medium: "Roboto-Medium";
+$font-bold: "Roboto-Bold";
+
+@font-face {
+	font-family: "Roboto-Light";
+	src: url("/assets/fonts/Roboto-Light.ttf");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("/assets/fonts/Roboto-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto-Medium";
+	src: url("/assets/fonts/Roboto-Medium.ttf");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto-Bold";
+	src: url("/assets/fonts/Roboto-Bold.ttf");
+	font-weight: 700;
+	font-style: normal;
+}
+
