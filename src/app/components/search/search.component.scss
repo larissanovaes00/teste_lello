@@ -1,0 +1,52 @@
+@import "../../../assets/styles/generics.scss";
+
+.c-search {
+    margin-bottom: 64px;
+    display: flex;
+
+    input {
+        padding: 13px 20px;
+        width: 75%;
+        font-family: $font-regular;
+        color: $green;
+        font-size: 16px;
+        border: none;
+        box-shadow: 0px 0px 10px 0px #b7b6b5d1;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        transition: 0.4s;
+
+        &::placeholder{
+            font-family: $font-regular;
+            color: $grey-medium;
+            font-size: 16px;
+        }
+
+        &:focus{
+            box-shadow: none;
+        }
+    }
+
+    button {
+        width: 25%;
+        border: none;
+        background: $green;
+        color: $white;
+        padding: 12px 32px;
+        font-family: $font-bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        transition: 0.4s;
+
+        &:hover{
+            background: rgba(41,226,174,1);
+        }
+    }
+}

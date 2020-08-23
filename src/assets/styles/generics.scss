@@ -39,3 +39,21 @@ $font-bold: "Roboto-Bold";
 	font-style: normal;
 }
 
+
+/************************** BACKGROUND COLORS **************************/
+.bg-gradient-green{
+    background: rgb(32,207,158);
+    background: linear-gradient(180deg, rgba(32,207,158,1) 55%, rgba(41,226,174,1) 100%);
+}
+
+.bg-grey-light{
+	background: $grey-light;
+}
+
+.bg-black{
+	background: $black;
+}
+
+.bg-white{
+	background: $white;
+}

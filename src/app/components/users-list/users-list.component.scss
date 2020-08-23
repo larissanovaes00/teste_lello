@@ -1,0 +1,71 @@
+@import '../../../assets/styles/generics.scss';
+
+.c-users{
+    display: flex;
+    flex-wrap: wrap;
+  
+
+    .user-card{
+        width: calc(25% - 20px);
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 15px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        box-shadow: 3px 3px 10px 0px #8f8e8dd1;
+        transition: 0.4s;
+        
+        &:hover{
+            transform: scale(1.1);
+            box-shadow: none;
+        }
+
+        .photo{
+            width: 95px;
+            height: 95px;
+            border: solid 2px $green;
+            border-radius: 55px;
+            padding: 6px;
+            margin-bottom: 16px;
+            margin-top: 32px;
+
+
+            img{
+                border-radius: 50px;
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+            }
+        }
+
+        .name{
+            width: 100%;
+            font-family: $font-bold;
+            color: $black;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .email{
+            color: $grey-medium;
+            font-family: $font-regular;
+            font-size: 12px;
+            margin-bottom: 32px;
+        }
+
+        .repositories{
+            color: $green;
+            font-family: $font-bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            width: 100%;
+            border-top: solid 2px $grey-light;
+            padding: 16px 0px;
+        }
+
+    }
+}
