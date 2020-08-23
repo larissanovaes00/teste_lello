@@ -3,20 +3,34 @@
 .c-users{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   
-
     .user-card{
-        width: calc(25% - 20px);
         text-align: center;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         border-radius: 15px;
-        margin-right: 20px;
-        margin-bottom: 20px;
+        margin-right: 16px;
+        margin-bottom: 16px;
         cursor: pointer;
         box-shadow: 3px 3px 10px 0px #8f8e8dd1;
         transition: 0.4s;
+        width: calc(20% - 20px);
+
+        //responsive behaviour
+        @media(max-width: 1200px){
+            width: calc(33.33% - 20px);
+        }
+
+        @media(max-width: 768px){
+            width: calc(50% - 20px);
+        }
+
+        @media(max-width: 575px){
+            width: 100%;
+            margin-right: 0px;
+        }
         
         &:hover{
             transform: scale(1.1);
@@ -31,7 +45,6 @@
             padding: 6px;
             margin-bottom: 16px;
             margin-top: 32px;
-
 
             img{
                 border-radius: 50px;
@@ -66,6 +79,5 @@
             border-top: solid 2px $grey-light;
             padding: 16px 0px;
         }
-
     }
 }
