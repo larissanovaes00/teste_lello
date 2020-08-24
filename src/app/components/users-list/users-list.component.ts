@@ -15,16 +15,13 @@ export class UsersListComponent implements OnInit {
     user = {} as Users;
     users: Users[];
     login: string;
-    followers: any;
+    followers: number;
 
     constructor(private usersListService: UsersListService) { }
 
     ngOnInit(): void {
-        this.usersListService.getAllUsers;
         this.getUsers();
-
         
-
     }
 
     getUsers() {
@@ -33,25 +30,33 @@ export class UsersListComponent implements OnInit {
             tap((users: Users[]) => {
                 this.users = users;
             }),
-            switchMap((users: Users[]) => {
-                return of(users.forEach(el => {
-                this.getUsersFollowers(el.login)
+            switchMap(users => {
+                return of(users.forEach(user => {
+                    this.getUserFollowers(user.login)
+                    this.getUserRepo(user.login)
                 }))
             })
         )
-        .subscribe(() => {
+        .subscribe()
+        
+    }
+
+    getUserFollowers(user: string){
+        this.usersListService.getFollowers(user)
+        .subscribe(followers => {
+            this.followers = followers.length;
             console.log(this.followers)
         })
     }
 
-    getUsersFollowers = (login: string) => {
-        return this.usersListService.getFollowers(login)
-        .pipe(
-            tap(userFollower => {
-                this.followers = userFollower
-            })
-        )
+    getUserRepo(user: string){
+        this.usersListService.getRepositories(user)
+        .subscribe(repo => {
+            // this.followers = repo.length;
+            console.log(repo)
+        })
     }
+
 
 
 

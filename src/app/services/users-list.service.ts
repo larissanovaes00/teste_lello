@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError, tap } from 'rxjs/operators';
 import { Users } from '../models/users';
 
 @Injectable({
@@ -11,7 +11,7 @@ import { Users } from '../models/users';
 export class UsersListService {
 
     url = 'https://api.github.com/orgs/angular/public_members';
-    followers = 'https://api.github.com/users/';
+    baseUrl = 'https://api.github.com/users/';
 
     constructor(private httpClient: HttpClient) { }
 
@@ -35,7 +35,11 @@ export class UsersListService {
     }
 
     getFollowers(user: string): Observable<any>{
-        return this.httpClient.get<any>(`${this.followers}${user}/followers`)            
+        return this.httpClient.get<any>(`${this.baseUrl}${user}/followers`)        
+    }
+
+    getRepositories(user: string){
+        return this.httpClient.get<any>(`${this.baseUrl}${user}/repos`)   
     }
 
     handleError(error: HttpErrorResponse) {
